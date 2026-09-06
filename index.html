@@ -20,7 +20,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 0 16px 48px; /* 0 sopra, 16px ai lati, 48px sotto */
+      padding: 0px 0px 48px; /* 0 sopra, 16px ai lati, 48px sotto */
       font-family: 'DM Sans', -apple-system, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
@@ -46,7 +46,7 @@
     /* Su schermi piccoli (telefono): tolgo i margini laterali e gli angoli arrotondati */
     @media (max-width: 500px) {
       body {
-        padding: 0 0 40px;
+        padding: 0 0 0;
       }
       .card {
         max-width: 100%;
@@ -66,7 +66,7 @@
     /* Bottone sovrapposto all'immagine, centrato orizzontalmente */
     .cal-btn {
       position: absolute;      /* si posiziona rispetto a .img-box */
-      bottom: 140px;           /* distanza dal basso dell'immagine — cambia questo per spostarlo */
+      bottom: 18%;           /* distanza dal basso dell'immagine — cambia questo per spostarlo */
       left: 50%;
       transform: translateX(-50%); /* trucco per centrarlo esattamente */
       display: inline-flex;
