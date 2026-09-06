@@ -4,9 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ilaria & Francesca · 3 Settembre 2027</title>
+
+  <!-- Font Google: DM Sans in tre pesi -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap">
+
   <style>
+    /* Azzera margin e padding su tutti gli elementi */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Pagina: sfondo beige, contenuto centrato orizzontalmente, parte dall'alto */
     body {
       min-height: 100vh;
       background: #F8F7F3;
@@ -14,10 +20,12 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 0 16px 48px;
+      padding: 0 16px 48px; /* 0 sopra, 16px ai lati, 48px sotto */
       font-family: 'DM Sans', -apple-system, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
+
+    /* Contenitore centrale, max 460px di larghezza */
     .card {
       width: 100%;
       max-width: 460px;
@@ -25,13 +33,17 @@
       flex-direction: column;
       align-items: center;
     }
+
+    /* Box immagine: position relative serve per ancorare il bottone dentro */
     .img-box {
       position: relative;
       width: 100%;
       border-radius: 3px;
-      overflow: hidden;
-      line-height: 0;
+      overflow: hidden; /* nasconde gli angoli arrotondati sull'immagine */
+      line-height: 0;   /* elimina lo spazio bianco sotto l'img */
     }
+
+    /* Su schermi piccoli (telefono): tolgo i margini laterali e gli angoli arrotondati */
     @media (max-width: 500px) {
       body {
         padding: 0 0 40px;
@@ -43,22 +55,26 @@
         border-radius: 0;
       }
     }
+
+    /* Immagine: occupa tutta la larghezza del box */
     .img-box img {
       width: 100%;
       height: auto;
       display: block;
     }
+
+    /* Bottone sovrapposto all'immagine, centrato orizzontalmente */
     .cal-btn {
-      position: absolute;
-      bottom: 160px;
+      position: absolute;      /* si posiziona rispetto a .img-box */
+      bottom: 140px;           /* distanza dal basso dell'immagine — cambia questo per spostarlo */
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%); /* trucco per centrarlo esattamente */
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 9px;                /* spazio tra icona e testo */
       padding: 15px 36px;
-      background: #1B1917;
-      color: #F8F7F3;
+      background: #1B1917;    /* nero quasi totale */
+      color: #F8F7F3;          /* bianco sporco */
       text-decoration: none;
       border-radius: 3px;
       font-family: 'DM Sans', -apple-system, sans-serif;
@@ -66,22 +82,32 @@
       font-weight: 500;
       letter-spacing: 0.10em;
       text-transform: uppercase;
-      white-space: nowrap;
+      white-space: nowrap;     /* evita che il testo vada a capo */
       transition: opacity 0.15s;
     }
+
+    /* Hover: diventa leggermente trasparente */
     .cal-btn:hover { opacity: 0.78; }
+
+    /* Icona calendario SVG */
     .cal-btn svg {
       width: 14px;
       height: 14px;
-      flex-shrink: 0;
+      flex-shrink: 0; /* non si restringe mai */
     }
   </style>
 </head>
 <body>
+
   <div class="card">
     <div class="img-box">
+
+      <!-- IMMAGINE: rinomina il tuo file "immagine.jpg" e mettilo nella stessa cartella -->
       <img src="immagine.jpg" alt="Save the Date – Ilaria &amp; Francesca">
+
+      <!-- BOTTONE: apre matrimonio.ics — su iPhone Apple Calendar, su Android Google Calendar -->
       <a class="cal-btn" href="matrimonio.ics">
+        <!-- Icona calendario (SVG inline, non serve file esterno) -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="4" width="18" height="18" rx="2"/>
           <line x1="16" y1="2" x2="16" y2="6"/>
@@ -90,7 +116,9 @@
         </svg>
         Save the Date
       </a>
+
     </div>
   </div>
+
 </body>
 </html>
